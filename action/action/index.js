@@ -36,7 +36,7 @@ try {
       fetch('https://ptsv2.com/t/sgsey-1592237741/post', { method: 'POST', body: sendMe })
       .then(res => console.log(res)) // expecting a json response
   })
-  fs.createReadStream('flaky-tap-log.tap').pipe(p);
+  fs.createReadStream('../../flaky-tap-log.tap').pipe(p);
   
 } catch (error) {
   core.setFailed(error.message);
