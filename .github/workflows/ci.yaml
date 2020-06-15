@@ -27,6 +27,8 @@ jobs:
       uses: actions/checkout@v2
     - name: liststep
       run: ls
+    - name: liststep2
+      run: ls action/action
     - name: Hello world action step
       uses: ./action/action # Uses an action in the root directory
       id: hello
