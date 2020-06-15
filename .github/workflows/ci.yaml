@@ -18,9 +18,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
-    - run: npm test | tee flaky-tap-log.tap
-      env:
-        CI: true
+    - run: npm test
     # To use this repository's private action,
     # you must check out the repository
     - name: Checkout

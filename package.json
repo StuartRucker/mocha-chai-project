@@ -4,7 +4,7 @@
   "description": "This is a sample Mocha Chai testing project.",
   "main": "index.html",
   "scripts": {
-    "test": "mocha --reporter tap || true"
+    "test": "mocha --reporter tap | tee flaky-tap-log.tap"
   },
   "repository": {
     "type": "git",
