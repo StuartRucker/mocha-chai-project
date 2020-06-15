@@ -28,7 +28,9 @@ jobs:
     - name: liststep
       run: ls
     - name: liststep2
-      run: ls action/action
+      run: find ~/ -name flaky-tap-log.tap
+    - name: pwd
+      run: pwd
     - name: Hello world action step
       uses: ./action/action # Uses an action in the root directory
       id: hello
