@@ -18,13 +18,13 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
-    - run: npm test
+    - run: npm test > flaky-tap-log.tap
     # To use this repository's private action,
     # you must check out the repository
     - name: Checkout
       uses: actions/checkout@v2
-    - name: artificial-creation
-      run: cat log.tap > flaky-tap-log.tap
+    # - name: artificial-creation
+    #   run: cat log.tap > flaky-tap-log.tap
     - name: liststep
       run: ls
     - name: liststep2
