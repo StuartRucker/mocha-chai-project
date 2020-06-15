@@ -23,10 +23,8 @@ jobs:
     # you must check out the repository
     - name: Checkout
       uses: actions/checkout@v2
-    - name: makefile
-      run: touch EXAMPLEFILE
-    - name: sleep
-      run: /bin/sleep 3
+    - name: artificial-creation
+      run: cat log.tap > flaky-tap-log.tap
     - name: liststep
       run: ls
     - name: liststep2
