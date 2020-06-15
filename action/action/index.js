@@ -17,6 +17,7 @@ const fetch = require('node-fetch');
 const fs = require('fs');
 const core = require('@actions/core');
 const github = require('@actions/github');
+const path = require("path");
 
 try {
   // `who-to-greet` input defined in action metadata file
@@ -36,7 +37,7 @@ try {
       fetch('https://ptsv2.com/t/sgsey-1592237741/post', { method: 'POST', body: sendMe })
       .then(res => console.log(res)) // expecting a json response
   })
-  fs.createReadStream('../../flaky-tap-log.tap').pipe(p);
+  fs.createReadStream(path.resolve(__dirname, '../../flaky-tap-log.tap')).pipe(p);
   
 } catch (error) {
   core.setFailed(error.message);
