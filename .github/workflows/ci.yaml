@@ -19,19 +19,11 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install
     - run: npm test
-    # - name: artificial-creation
-    #   run: cat log.tap > flaky-tap-log.tap
-    - name: liststep
-      run: ls
-    - name: liststep2
-      run: find ~/ -name flaky-tap-log.tap
-    - name: pwd
-      run: pwd
-    - name: Hello world action step
+    - name: Post TAP
       uses: ./action/action # Uses an action in the root directory
-      id: hello
       with:
-        who-to-greet: 'Mona the Octocat'
-    # Use the output from the `hello` step
-    - name: Get the output time
-      run: echo "The time was ${{ steps.hello.outputs.time }}"
+        github-actor: $GITHUB_ACTOR
+        github-repository: $GITHUB_ACTOR
+        github-sha: $GITHUB_ACTOR
+        github-ref: $GITHUB_ACTOR
+   
