@@ -4,7 +4,7 @@
   "description": "This is a sample Mocha Chai testing project.",
   "main": "index.html",
   "scripts": {
-    "test": "mocha || true"
+    "test": "mocha --reporter tap || true"
   },
   "repository": {
     "type": "git",
@@ -27,5 +27,8 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^5.0.5"
+  },
+  "dependencies": {
+    "mocha-tap-reporter": "^0.1.3"
   }
 }
