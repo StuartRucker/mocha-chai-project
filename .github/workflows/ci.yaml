@@ -25,6 +25,8 @@ jobs:
       uses: actions/checkout@v2
     - name: makefile
       run: touch EXAMPLEFILE
+    - name: sleep
+      run: /bin/sleep 3
     - name: liststep
       run: ls
     - name: liststep2
