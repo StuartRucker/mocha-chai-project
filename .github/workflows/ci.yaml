@@ -23,7 +23,12 @@ jobs:
       uses: ./action/action # Uses an action in the root directory
       with:
         github-actor: ${{github.actor}}
-        # github-repository: ${{GITHUB_ACTOR}}
-        # github-sha: ${{GITHUB_ACTOR}}
-        # github-ref: ${{GITHUB_ACTOR}}
+        github-repository: ${{github.repository}}
+        github-repository-owner: ${{github.repository-owner}}
+        github-sha: ${{github.sha}}
+        github-ref: ${{github.ref}}
+        github-headref: ${{github.head_ref}}
+        github-baseref: ${{github.base_ref}}
+        github-token: ${{github.token}}
+
    
