@@ -5,18 +5,18 @@ inputs:
     description: 'Github Actor'
     required: true
     default: 'None'
-  github-repository:
-    description: 'Github Repository'
-    required: true
-    default: 'None'
-  github-sha:
-    description: 'Github Sha'
-    required: true
-    default: 'None'
-  github-ref:
-    description: 'Branch or Tag that triggered workflow'
-    required: false
-    default: 'None'
+  # github-repository:
+  #   description: 'Github Repository'
+  #   required: true
+  #   default: 'None'
+  # github-sha:
+  #   description: 'Github Sha'
+  #   required: true
+  #   default: 'None'
+  # github-ref:
+  #   description: 'Branch or Tag that triggered workflow'
+  #   required: false
+  #   default: 'None'
 runs:
   using: 'node12'
   main: 'index.js'

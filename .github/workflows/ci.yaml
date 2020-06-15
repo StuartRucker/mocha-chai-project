@@ -22,8 +22,8 @@ jobs:
     - name: Post TAP
       uses: ./action/action # Uses an action in the root directory
       with:
-        github-actor: ${{github_actor}}
-        github-repository: ${{GITHUB_ACTOR}}
-        github-sha: ${{GITHUB_ACTOR}}
-        github-ref: ${{GITHUB_ACTOR}}
+        github-actor: ${{github}}
+        # github-repository: ${{GITHUB_ACTOR}}
+        # github-sha: ${{GITHUB_ACTOR}}
+        # github-ref: ${{GITHUB_ACTOR}}
    
