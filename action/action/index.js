@@ -16,7 +16,6 @@ var Parser = require('tap-parser');
 const fetch = require('node-fetch');
 const fs = require('fs');
 const core = require('@actions/core');
-const github = require('@actions/github');
 const path = require("path");
 
 try {
@@ -38,7 +37,7 @@ try {
   var data = [];
   var p = new Parser();
   p.on('result', function(assert){
-      data.push(JSON.stringify(assert));
+      data.push(JSON.parse(assert));
   });
   p.on('complete',function(results){
       var sendMe = JSON.stringify({summary: results, data: data, metadata: metaData});
