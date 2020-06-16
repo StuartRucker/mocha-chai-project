@@ -22,14 +22,7 @@ jobs:
     - name: Post TAP
       uses: ./action/action # Uses an action in the root directory
       with:
-        github-actor: ${{github.actor}}
-        github-repository: ${{github.repository}}
-        github-repository-owner: ${{github.repository_owner}}
-        github-sha: ${{github.sha}}
-        github-ref: ${{github.ref}}
-        github-headref: ${{github.head_ref}}
-        github-baseref: ${{github.base_ref}}
-        github-token: ${{github.token}}
+        github: ${{toJson(github)}}
         matrix: ${{toJson(matrix)}}
         os: ${{toJson(runner)}}
 

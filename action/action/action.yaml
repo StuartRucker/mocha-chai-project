@@ -1,38 +1,10 @@
 name: 'Post TAP Files'
 description: 'Greet someone and record the time'
 inputs:
-  github-actor:
-    description: 'Github Actor'
+  github:
+    description: 'The Github Context JSON object'
     required: true
     default: 'None'
-  github-repository:
-    description: 'Github Repository'
-    required: true
-    default: 'None'
-  github-sha:
-    description: 'Github Sha'
-    required: true
-    default: 'None'
-  github-ref:
-    description: 'Branch or Tag that triggered workflow'
-    required: false
-    default: 'None'
-  github-repository-owner:
-    description: 'Github Repository Owner'
-    required: true
-    default: 'None'
-  github-headref:
-    description: 'Head ref of Pull request'
-    required: true
-    default: 'None'
-  github-baseref:
-    description: 'Base Ref of Pull request'
-    required: true
-    default: 'None'
-  github-token:
-    description: 'Github Token'
-    required: false
-    default: 'None'  
   matrix:
     description: 'Matrix information on run'
     required: false

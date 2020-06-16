@@ -23,14 +23,7 @@ try {
   const nameToGreet = core.getInput('github-actor');
   
   var metaData = {
-    githubactor: core.getInput('github-actor'),
-    githubrepository: core.getInput('github-repository'),
-    githubrepositoryowner: core.getInput('github-repository-owner'),
-    githubsha: core.getInput('github-sha'),
-    githubref: core.getInput('github-ref'),
-    githubheadref: core.getInput('github-headref'),
-    githubbaseref: core.getInput('github-baseref'),
-    githubtoken: core.getInput('github-token'),
+    github: JSON.parse(core.getInput('github')),
     os: JSON.parse(core.getInput('os')),
     matrix: JSON.parse(core.getInput('matrix'))
   };
