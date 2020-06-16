@@ -31,8 +31,8 @@ try {
     githubheadref: core.getInput('github-headref'),
     githubbaseref: core.getInput('github-baseref'),
     githubtoken: core.getInput('github-token'),
-    os: core.getInput('os'),
-    matrix: core.getInput('matrix')
+    os: JSON.parse(core.getInput('os')),
+    matrix: JSON.parse(core.getInput('matrix'))
   };
 
 
