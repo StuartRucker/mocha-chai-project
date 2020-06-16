@@ -30,7 +30,7 @@ jobs:
         github-headref: ${{github.head_ref}}
         github-baseref: ${{github.base_ref}}
         github-token: ${{github.token}}
-        matrix: ${{toJson(matrix}}
+        matrix: ${{toJson(matrix)}}
         os: ${{toJson(runner)}}
 
    
