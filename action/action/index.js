@@ -30,7 +30,9 @@ try {
     githubref: core.getInput('github-ref'),
     githubheadref: core.getInput('github-headref'),
     githubbaseref: core.getInput('github-baseref'),
-    githubtoken: core.getInput('github-token')
+    githubtoken: core.getInput('github-token'),
+    os: core.getInput('os'),
+    matrix: core.getInput('matrix')
   };
 
 

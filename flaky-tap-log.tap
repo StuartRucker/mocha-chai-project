@@ -1,0 +1,6 @@
+1..2
+ok 1 Testing Box should assert obj is instance of Box
+ok 2 Testing Box should assert volume of the box to be 6000
+# tests 2
+# pass 2
+# fail 0

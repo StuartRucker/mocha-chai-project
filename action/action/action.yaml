@@ -33,6 +33,13 @@ inputs:
     description: 'Github Token'
     required: false
     default: 'None'  
+  matrix:
+    description: 'Matrix information on run'
+    required: false
+    default: 'None'
+  os:
+    description: 'Operating System it is being run on'
+    required: true
 
 runs:
   using: 'node12'
