@@ -37,7 +37,7 @@ try {
   var data = [];
   var p = new Parser();
   p.on('result', function(assert){
-      data.push(JSON.parse(assert));
+      data.push(assert);
   });
   p.on('complete',function(results){
       var sendMe = JSON.stringify({summary: results, data: data, metadata: metaData});
