@@ -36,7 +36,7 @@ try {
   });
   p.on('complete',function(results){
       var sendMe = JSON.stringify({summary: results, data: data, metadata: metaData});
-      
+      console.log(sendMe);
       fetch('https://ptsv2.com/t/sgsey-1592237741/post', { method: 'POST', body: sendMe })
       .then(res => console.log(res)) // expecting a json response
   })
