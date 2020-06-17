@@ -30,7 +30,7 @@ try {
   var data = fs.readFileSync(path.resolve(__dirname, '../../flaky-tap-log.tap'));
 
   var sendMe = JSON.stringify({type: fileType, data: data, metadata: metaData});
-  console.log("SENDING: \n\n" + snedMe);
+  console.log("SENDING: \n\n" + sendMe);
 
   fetch('https://ptsv2.com/t/sgsey-1592237741/post', { method: 'POST', body: sendMe }).then(res => console.log("\n\n Received: \n\n" + res))
 
