@@ -25,5 +25,6 @@ jobs:
         github: ${{toJson(github)}}
         matrix: ${{toJson(matrix)}}
         os: ${{toJson(runner)}}
+        logtype: TAP
 
    

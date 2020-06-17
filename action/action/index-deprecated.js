@@ -12,28 +12,35 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+var Parser = require('tap-parser');
 const fetch = require('node-fetch');
 const fs = require('fs');
 const core = require('@actions/core');
 const path = require("path");
 
-
 try {
   // `who-to-greet` input defined in action metadata file
+  const nameToGreet = core.getInput('github-actor');
   
   var metaData = {
     github: JSON.parse(core.getInput('github')),
     os: JSON.parse(core.getInput('os')),
     matrix: JSON.parse(core.getInput('matrix'))
   };
-  var fileType = core.getInput('logtype');
-  var data = fs.readFileSync(path.resolve(__dirname, '../../flaky-tap-log.tap'));
 
-  var sendMe = JSON.stringify({type: fileType, data: data, metadata: metaData});
-  console.log("SENDING: \n\n" + snedMe);
 
-  fetch('https://ptsv2.com/t/sgsey-1592237741/post', { method: 'POST', body: sendMe }).then(res => console.log("\n\n Received: \n\n" + res))
-
+  var data = [];
+  var p = new Parser();
+  p.on('result', function(assert){
+      data.push(assert);
+  });
+  p.on('complete',function(results){
+      var sendMe = JSON.stringify({summary: results, data: data, metadata: metaData});
+      console.log(sendMe);
+      fetch('https://ptsv2.com/t/sgsey-1592237741/post', { method: 'POST', body: sendMe })
+      .then(res => console.log(res)) // expecting a json response
+  })
+  fs.createReadStream(path.resolve(__dirname, '../../flaky-tap-log.tap')).pipe(p);
   
 } catch (error) {
   core.setFailed(error.message);

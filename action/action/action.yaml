@@ -12,6 +12,8 @@ inputs:
   os:
     description: 'Operating System it is being run on'
     required: true
+  logtype:
+    description: 'Type of Log.. e.g. (TAP, XML, ... TODO)'
 
 runs:
   using: 'node12'
