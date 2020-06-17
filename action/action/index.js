@@ -27,7 +27,7 @@ try {
     matrix: JSON.parse(core.getInput('matrix'))
   };
   var fileType = core.getInput('logtype');
-  var data = fs.readFileSync(path.resolve(__dirname, '../../flaky-tap-log.tap'));
+  var data = fs.readFileSync(path.resolve(__dirname, '../../flaky-tap-log.tap'),"utf8");
 
   var sendMe = JSON.stringify({type: fileType, data: data, metadata: metaData});
   console.log("SENDING: \n\n" + sendMe);
