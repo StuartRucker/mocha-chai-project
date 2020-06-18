@@ -19,12 +19,14 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install
     - run: npm test
+    - run: ls
+    - run: pwd
     - name: Post TAP
-      uses: GoogleCloudPlatform/flaky-service/packages/action@master
+      uses: GoogleCloudPlatform/flaky-service/packages/action@actiontesting
       with:
         github: ${{toJson(github)}}
         matrix: ${{toJson(matrix)}}
         os: ${{toJson(runner)}}
         logtype: TAP
-
-   
+        logpath: ../../../../../../flaky-tap-log.tap
+  
