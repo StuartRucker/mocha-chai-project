@@ -28,5 +28,6 @@ jobs:
         matrix: ${{toJson(matrix)}}
         os: ${{toJson(runner)}}
         logtype: TAP
-        filepath: ../../../../../../flaky-tap-log.tap
+        filefolder: ${{github.workspace}}}}
+        filename: flaky-tap-log.tap
   
