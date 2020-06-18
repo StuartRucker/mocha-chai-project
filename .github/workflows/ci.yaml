@@ -28,5 +28,5 @@ jobs:
         matrix: ${{toJson(matrix)}}
         os: ${{toJson(runner)}}
         logtype: TAP
-        logpath: ../../../../../../flaky-tap-log.tap
+        filepath: ../../../../../../flaky-tap-log.tap
   
