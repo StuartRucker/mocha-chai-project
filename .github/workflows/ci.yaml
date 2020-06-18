@@ -20,7 +20,7 @@ jobs:
     - run: npm install
     - run: npm test
     - name: Post TAP
-      uses: ./action/action # Uses an action in the root directory
+      uses: ./action2  # Uses an action in the root directory
       with:
         github: ${{toJson(github)}}
         matrix: ${{toJson(matrix)}}
