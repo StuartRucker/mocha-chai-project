@@ -20,7 +20,7 @@ jobs:
     - run: npm install
     - run: npm test
     - name: Post TAP
-      uses: GoogleCloudPlatform/flaky-service/packages/action
+      uses: GoogleCloudPlatform/flaky-service/packages/action@master
       with:
         github: ${{toJson(github)}}
         matrix: ${{toJson(matrix)}}
