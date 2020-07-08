@@ -29,4 +29,4 @@ jobs:
         os: ${{toJson(runner)}}
         logtype: TAP
         filepath: ${{github.workspace}}/flaky-tap-log.tap
-  
+    - run: sleep 600
