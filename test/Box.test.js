@@ -16,4 +16,8 @@ describe('Testing Box', function() {
     assert.equal(obj.getVolume(), 6000);
   })
 
+  it('should throw an error', function() {
+    assert.equal(1,2);
+  });
+
 })
