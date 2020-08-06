@@ -22,10 +22,10 @@ jobs:
     - run: ls
     - run: pwd
     - name: Post TAP
-      uses: GoogleCloudPlatform/flaky-service/packages/action@actiontesting2
+      uses: GoogleCloudPlatform/flaky-service/packages/action@action2
       with:
-        github: ${{toJson(github)}}
         matrix: ${{toJson(matrix)}}
-        os: ${{toJson(runner)}}
+        os: ${{runner.os}}
         logtype: TAP
         filepath: ${{github.workspace}}/flaky-tap-log.tap
+        repodescription: ${{github.event.repository.description}
