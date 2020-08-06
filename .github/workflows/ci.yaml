@@ -22,7 +22,7 @@ jobs:
     - run: ls
     - run: pwd
     - name: Post TAP
-      uses: GoogleCloudPlatform/flaky-service/packages/action@actiontesting
+      uses: GoogleCloudPlatform/flaky-service/packages/action@actiontesting2
       with:
         github: ${{toJson(github)}}
         matrix: ${{toJson(matrix)}}
