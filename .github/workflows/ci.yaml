@@ -29,3 +29,4 @@ jobs:
         logtype: TAP
         filepath: ${{github.workspace}}/flaky-tap-log.tap
         repodescription: ${{github.event.repository.description}}
+        private: ${{github.event.repository.private}}
