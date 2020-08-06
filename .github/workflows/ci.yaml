@@ -28,4 +28,4 @@ jobs:
         os: ${{runner.os}}
         logtype: TAP
         filepath: ${{github.workspace}}/flaky-tap-log.tap
-        repodescription: ${{github.event.repository.description}
+        repodescription: ${{github.event.repository.description}}
