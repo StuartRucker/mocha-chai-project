@@ -24,8 +24,10 @@ jobs:
     - name: Post TAP
       uses: GoogleCloudPlatform/flaky-service/packages/action@action2
       with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
         matrix: ${{toJson(matrix)}}
         os: ${{runner.os}}
         log-type: TAP
         file-path: ${{github.workspace}}/flaky-tap-log.tap
         repo-description: ${{github.event.repository.description}}
+        tag: 'Epic tag'
