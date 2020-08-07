@@ -26,7 +26,6 @@ jobs:
       with:
         matrix: ${{toJson(matrix)}}
         os: ${{runner.os}}
-        logtype: TAP
-        filepath: ${{github.workspace}}/flaky-tap-log.tap
-        repodescription: ${{github.event.repository.description}}
-        private: ${{github.event.repository.private}}
+        log-type: TAP
+        file-path: ${{github.workspace}}/flaky-tap-log.tap
+        repo-description: ${{github.event.repository.description}}
