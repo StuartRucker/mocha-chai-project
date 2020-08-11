@@ -31,3 +31,4 @@ jobs:
         file-path: ${{github.workspace}}/flaky-tap-log.tap
         repo-description: ${{github.event.repository.description}}
         tag: 'Epic tag'
+        endpoint: 'https://flaky-dev-staging.web.app'
